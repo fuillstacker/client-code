@@ -7,7 +7,7 @@ export const register = async (email, password) => {
     return async dispatch => {
         try {
             dispatch(showLoader())
-            const response = await axios.post(`${API_URL}api/register`, {
+            const response = await axios.post(`http://192.168.1.7:8888/api/register`, {
                 email,
                 password
             })
