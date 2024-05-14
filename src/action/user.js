@@ -4,19 +4,14 @@ import { API_URL } from '../config'
 import { hideLoader, showLoader } from '../reducers/appReducer'
 
 export const register = async (email, password) => {
-    return async dispatch => {
-        try {
-            dispatch(showLoader())
-            const response = await axios.post(`http://192.168.1.7:8888/api/register`, {
-                email,
-                password
-            })
-            console.log(response.data)
-        } catch (e) {
-            alert(e.response.data.message)
-        } finally {
-            dispatch(hideLoader())
-        }
+    try {
+        const response = await axios.post(`${API_URL}api/register`, {
+            email,
+            password
+        })
+        alert(response.data.msg)
+    } catch (e) {
+        alert(e.response.data.msg)
     }
 }
 
