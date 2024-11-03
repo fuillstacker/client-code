@@ -12,7 +12,7 @@ export const register = async (email, password) => {
         alert(response.data.msg)
     } catch (e) {
         alert(e.response.data.msg)
-    }
+    } 
 }
 
 export const login = (email, password) => {

@@ -8,7 +8,7 @@ export const getFiles = (dirId, sort) => {
     return async dispatch => {
         try {
             dispatch(showLoader())
-            let url = `${API_URL}/api/files`
+            let url = `${API_URL}api/files`
             if(dirId) {
                 url = `${API_URL}api/files?parent=${dirId}`
             }
